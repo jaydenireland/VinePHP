@@ -3,14 +3,14 @@
 header("Content-type: text/html");
 require("main.php");
 if (isset($_POST['login'])) {
-    $vine = new Vine($_POST['email'], $_POST['password']);
-    if ($vine->success) {
-        $data = $vine->userinfo();
+    $vine = new Vine($_POST['email'], $_POST['password']); //Login to Vine
+    if ($vine->success) { //If login was succesful
+        $data = $vine->userinfo(); //Grab user info
         echo "Your userID for Vine is <span style=\"color:blue;\">" . $data['userid'] . "</span>";
-        $vine->logout();
+        $vine->logout(); //Logout
         die();
     }
-    else {
+    else { //If login was not succesful
         echo "That username and password combo was wrong. Try again please.<br>";
     }
 }
