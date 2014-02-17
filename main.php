@@ -21,6 +21,10 @@ class Vine {
             $this->success = true;
         } else $this->success = false;
     }
+    function logout() {
+        $return = $this->endpoint("/users/authenticate", $this->key, "DELETE");
+        return $return;
+    }
     function userinfo() {
             return array(
                 "name" => $this->name,

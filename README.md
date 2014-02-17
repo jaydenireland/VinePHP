@@ -36,6 +36,7 @@ The wrapper returns the json decoded response in an array, so some debugging sho
 ```
 ### Here are all the functions you can call at the moment
 ```PHP
+logout();
 userinfo();
 endpoint($endpoint, $key, $method, $data);
 self_profile();
