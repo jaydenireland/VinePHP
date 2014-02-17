@@ -6,9 +6,10 @@ class Vine {
     private $name;
     private $key;
     private $log;
+    var $baseurl = "https://vine.co/api";
     var $success;
     function __construct($username, $password) {
-        $ch = curl_init("https://vine.co/api/users/authenticate");
+        $ch = curl_init($this->baseurl . "/users/authenticate");
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, "username=" . $username . "&password=" . $password);
         $return = json_decode(curl_exec($ch), 1);
@@ -28,7 +29,7 @@ class Vine {
                 );
     }
     function endpoint($endpoint, $key, $type="POST", $data="") {
-            $ch = curl_init("https://vine.co/api" . $endpoint);
+            $ch = curl_init($this->baseurl . $endpoint);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $type);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
