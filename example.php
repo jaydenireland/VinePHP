@@ -1,5 +1,4 @@
 <?php
-//See this example live at https://vinephp-c9-jdenxrocks.c9.io/example.php
 header("Content-type: text/html");
 require("main.php");
 if (isset($_POST['login'])) {
