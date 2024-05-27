@@ -1,3 +1,6 @@
+# Wow!
+I wrote this when I was 13. I'm archiving the repo for historical purposes.
+
 Vine PHP API
 ==========
 
